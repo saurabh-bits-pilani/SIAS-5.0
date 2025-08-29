@@ -610,15 +610,18 @@ const PitraDosh = () => {
       </section>
 
       {/* Additional Remedies */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-gradient-to-br from-blue-100 to-purple-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading font-bold text-3xl text-gray-900 mb-8 text-center">
             Additional Spiritual Remedies
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-soft">
-              <h3 className="font-heading font-bold text-xl text-gray-900 mb-4">Charitable Acts</h3>
+            <div className="group bg-white rounded-xl p-6 shadow-soft transition-all duration-300 hover:shadow-lg hover:ring-2 hover:ring-primary-300 hover:ring-opacity-75 border border-blue-100">
+              <h3 className="font-heading font-semibold text-xl text-gray-900 mb-4 flex items-center">
+                <span className="mr-2">🌿</span>
+                Charitable Acts
+              </h3>
               <ul className="space-y-2 text-gray-700">
                 <li>• Donate food to the needy on Amavasya days</li>
                 <li>• Feed crows and dogs regularly</li>
@@ -627,8 +630,11 @@ const PitraDosh = () => {
               </ul>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-soft">
-              <h3 className="font-heading font-bold text-xl text-gray-900 mb-4">Spiritual Practices</h3>
+            <div className="group bg-white rounded-xl p-6 shadow-soft transition-all duration-300 hover:shadow-lg hover:ring-2 hover:ring-primary-300 hover:ring-opacity-75 border border-blue-100">
+              <h3 className="font-heading font-semibold text-xl text-gray-900 mb-4 flex items-center">
+                <span className="mr-2">🕉️</span>
+                Spiritual Practices
+              </h3>
               <ul className="space-y-2 text-gray-700">
                 <li>• Regular meditation and prayer</li>
                 <li>• Visit temples dedicated to Lord Vishnu</li>
@@ -637,8 +643,11 @@ const PitraDosh = () => {
               </ul>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-soft">
-              <h3 className="font-heading font-bold text-xl text-gray-900 mb-4">Timing Considerations</h3>
+            <div className="group bg-white rounded-xl p-6 shadow-soft transition-all duration-300 hover:shadow-lg hover:ring-2 hover:ring-primary-300 hover:ring-opacity-75 border border-blue-100">
+              <h3 className="font-heading font-semibold text-xl text-gray-900 mb-4 flex items-center">
+                <span className="mr-2">📅</span>
+                Timing Considerations
+              </h3>
               <ul className="space-y-2 text-gray-700">
                 <li>• Pitru Paksha (September-October) is most effective</li>
                 <li>• Amavasya days for regular offerings</li>
@@ -647,8 +656,11 @@ const PitraDosh = () => {
               </ul>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-soft">
-              <h3 className="font-heading font-bold text-xl text-gray-900 mb-4">Professional Help</h3>
+            <div className="group bg-white rounded-xl p-6 shadow-soft transition-all duration-300 hover:shadow-lg hover:ring-2 hover:ring-primary-300 hover:ring-opacity-75 border border-blue-100">
+              <h3 className="font-heading font-semibold text-xl text-gray-900 mb-4 flex items-center">
+                <span className="mr-2">🔮</span>
+                Professional Help
+              </h3>
               <ul className="space-y-2 text-gray-700">
                 <li>• Consult experienced astrologers</li>
                 <li>• Perform remedies under expert guidance</li>
