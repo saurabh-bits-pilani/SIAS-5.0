@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /drafts/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://soul-infinity-liard.vercel.app/sitemap.xml
