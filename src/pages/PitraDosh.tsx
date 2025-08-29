@@ -10,6 +10,18 @@ const PitraDosh = () => {
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Symptoms data with emojis for Common Manifestations
+  const symptomsList = [
+    { emoji: '🧩', text: 'Persistent family disputes and lack of harmony' },
+    { emoji: '🩺', text: 'Chronic health issues without clear medical cause' },
+    { emoji: '💸', text: 'Financial instability despite hard work' },
+    { emoji: '💍', text: 'Delays in marriage or relationship problems' },
+    { emoji: '📈', text: 'Career obstacles and lack of professional growth' },
+    { emoji: '👶', text: 'Childlessness or difficulties in childbirth' },
+    { emoji: '🌙', text: 'Recurring nightmares or disturbed sleep' },
+    { emoji: '🏠', text: 'Feeling of negative presence in the home' }
+  ];
+
   // Dynamic media links - easy to update when needed
   const mediaLinks = {
     heroImage: 'https://pub-5d1db6c95ad0491c90e15290c1e62703.r2.dev/Pitra%20-%20WebP/ultra_realistic_scene_of_an_ancestral_portrait_wall.jpeg',
@@ -189,7 +201,7 @@ const PitraDosh = () => {
       </section>
 
       {/* Symptoms Section */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-gradient-to-br from-pink-100 to-indigo-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -206,22 +218,20 @@ const PitraDosh = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <div className="space-y-6">
-              <h3 className="font-heading font-bold text-2xl text-gray-900">Common Manifestations</h3>
-              <ul className="space-y-4">
-                {[
-                  'Persistent family disputes and lack of harmony',
-                  'Chronic health issues without clear medical cause',
-                  'Financial instability despite hard work',
-                  'Delays in marriage or relationship problems',
-                  'Career obstacles and lack of professional growth',
-                  'Childlessness or difficulties in childbirth',
-                  'Recurring nightmares or disturbed sleep',
-                  'Feeling of negative presence in the home'
-                ].map((symptom, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-700">{symptom}</span>
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-md border border-gray-200">
+              <h3 className="font-heading font-semibold text-2xl md:text-3xl text-gray-900 mb-4 text-center">
+                Common Manifestations
+              </h3>
+              <div className="w-24 h-1 bg-accent-300 rounded-full mb-8 mx-auto"></div>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                {symptomsList.map((symptom, index) => (
+                  <li key={index} className="flex items-start group transition-transform duration-200 hover:translate-y-[-1px]">
+                    <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-blue-200 text-blue-800 text-sm mr-3 mt-1">
+                      {symptom.emoji}
+                    </span>
+                    <span className="text-gray-700 leading-relaxed text-sm md:text-base">
+                      {symptom.text}
+                    </span>
                   </li>
                 ))}
               </ul>
