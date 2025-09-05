@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, MessageCircle, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageCircle, Clock, ExternalLink, ChevronDown } from 'lucide-react';
+import faqData from '../data/faqData.json';
 
 const Footer = () => {
+  const { faq } = faqData;
+
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'Our Services', href: '/services' },
@@ -36,9 +39,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="xl:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <img 
                 src="https://pub-5d1db6c95ad0491c90e15290c1e62703.r2.dev/Logo/Soul%20-Infinity-logo%201.png" 
@@ -71,6 +74,42 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Social Media */}
+          <div>
+            <h4 className="font-heading font-semibold text-lg mb-4 animate-pulse text-primary-300">
+              FAQ
+            </h4>
+            <div className="space-y-2">
+              {faq.slice(0, 5).map((item, index) => (
+                <details key={index} className="group">
+                  <summary className="flex items-center justify-between cursor-pointer text-gray-400 hover:text-white transition-colors text-sm py-2 list-none">
+                    <span className="flex-1 pr-2 leading-tight">
+                      {item.question.length > 60 
+                        ? `${item.question.substring(0, 60)}...` 
+                        : item.question
+                      }
+                    </span>
+                    <ChevronDown className="w-4 h-4 flex-shrink-0 transform transition-transform duration-200 group-open:rotate-180" />
+                  </summary>
+                  <div className="mt-2 pb-2 text-gray-300 text-sm leading-relaxed pl-1 animate-fade-in">
+                    {item.answer}
+                  </div>
+                </details>
+              ))}
+              {faq.length > 5 && (
+                <div className="mt-4 pt-2 border-t border-gray-700">
+                  <Link
+                    to="/contact"
+                    className="text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium inline-flex items-center"
+                  >
+                    More Questions? Contact Us
+                    <ExternalLink className="w-3 h-3 ml-1" />
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Social Media */}
